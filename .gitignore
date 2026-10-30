@@ -1,0 +1,35 @@
+# ---- Python venv (Python's venv tool placed the venv in main/) ----
+# Ignore everything inside main/ EXCEPT our game source under main/Include/.
+main/*
+!main/Include/
+# Re-ignore the contents of Include so we can whitelist selectively.
+main/Include/*
+# Keep the top-level game modules.
+!main/Include/*.py
+# Keep the battle package (but not its __pycache__).
+!main/Include/battle/
+main/Include/battle/*
+!main/Include/battle/*.py
+# Keep the tests package (but not its __pycache__).
+!main/Include/tests/
+main/Include/tests/*
+!main/Include/tests/*.py
+
+# ---- Python bytecode / caches ----
+__pycache__/
+*.py[cod]
+*$py.class
+.ruff_cache/
+
+# ---- Environments (in case a venv ever lands elsewhere) ----
+.env
+.venv/
+venv/
+ENV/
+
+# ---- Tooling / OS noise ----
+.pytest_cache/
+.mypy_cache/
+.nul
+Thumbs.db
+.DS_Store
